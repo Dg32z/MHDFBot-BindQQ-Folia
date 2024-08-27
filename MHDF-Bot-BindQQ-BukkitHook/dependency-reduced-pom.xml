@@ -74,16 +74,17 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>cn.ChengZhiYa</groupId>
-      <artifactId>MHDF-Bot-BukkitHook</artifactId>
-      <version>1.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>me.clip</groupId>
       <artifactId>placeholderapi</artifactId>
       <version>2.11.3</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>cn.ChengZhiYa</groupId>
+      <artifactId>MHDF-Bot</artifactId>
+      <version>1.0.1</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/libs/2.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>

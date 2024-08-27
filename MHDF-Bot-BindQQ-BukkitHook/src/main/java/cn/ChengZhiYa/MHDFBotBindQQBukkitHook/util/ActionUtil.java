@@ -1,6 +1,7 @@
 package cn.ChengZhiYa.MHDFBotBindQQBukkitHook.util;
 
 import cn.ChengZhiYa.MHDFBotBindQQBukkitHook.main;
+import com.github.Anon8281.universalScheduler.foliaScheduler.FoliaScheduler;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -19,10 +20,10 @@ public final class ActionUtil {
             String[] action = actions.split("\\|");
             switch (action[0]) {
                 case "[player]":
-                    Bukkit.getScheduler().runTask(main.instance, () -> player.chat("/" + PlaceholderAPI.setPlaceholders(player, action[1])));
+                    new FoliaScheduler(main.instance).runTask(() -> player.chat("/" + PlaceholderAPI.setPlaceholders(player, action[1])));
                     continue;
                 case "[console]":
-                    Bukkit.getScheduler().runTask(main.instance, () -> Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, action[1])));
+                    new FoliaScheduler(main.instance).runTask(() -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(player, action[1])));
                     player.closeInventory();
                     continue;
                 case "[playsound]":

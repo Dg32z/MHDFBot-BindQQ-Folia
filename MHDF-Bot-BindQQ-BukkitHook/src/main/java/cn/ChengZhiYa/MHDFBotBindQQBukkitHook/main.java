@@ -49,8 +49,8 @@ public final class main extends JavaPlugin {
         Objects.requireNonNull(getCommand("bindqqreload")).setExecutor(new Reload());
         Objects.requireNonNull(getCommand("grouphook")).setExecutor(new GroupHook());
 
-        new BindMessage().runTaskTimerAsynchronously(this, 0L, 20L);
-        new UpdateData().runTaskTimerAsynchronously(this, 0L, 20L);
+        new BindMessage().start();
+        new UpdateData().start();
 
         PlaceholderAPI.registerPlaceholders();
 
